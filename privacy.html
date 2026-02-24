@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Garden Timer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --mint: #A8E6CF;
+            --teal: #0D9373;
+            --deep-teal: #064E3B;
+            --blush: #F8C8DC;
+            --cream: #FDFAF6;
+            --text: #1a2e1a;
+            --text-secondary: #4a6a4a;
+            --border: #d4e8d4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* === HEADER === */
+        .header {
+            background: linear-gradient(135deg, var(--teal), var(--deep-teal));
+            padding: 3rem 1.5rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 30% 50%, rgba(168, 230, 207, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .header-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .header h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(1.75rem, 5vw, 2.5rem);
+            color: #fff;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+        }
+
+        .header .subtitle {
+            color: var(--mint);
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        .header nav {
+            margin-top: 1.25rem;
+        }
+
+        .header nav a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 100px;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .header nav a:hover {
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+        }
+
+        /* === MAIN CONTENT === */
+        .container {
+            max-width: 720px;
+            margin: -2rem auto 4rem;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 20px;
+            padding: clamp(2rem, 5vw, 3rem);
+            box-shadow:
+                0 1px 3px rgba(0,0,0,0.04),
+                0 8px 30px rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .effective-date {
+            display: inline-block;
+            background: var(--mint);
+            color: var(--deep-teal);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 0.3rem 0.9rem;
+            border-radius: 100px;
+            margin-bottom: 1.75rem;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+
+        .intro {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* === SECTIONS === */
+        .section {
+            margin-bottom: 2.25rem;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.35rem;
+            color: var(--deep-teal);
+            margin-bottom: 0.75rem;
+            font-weight: 400;
+        }
+
+        .section h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--teal);
+            margin-top: 1.25rem;
+            margin-bottom: 0.4rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .section p {
+            margin-bottom: 0.85rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .section ul {
+            margin: 0.5rem 0 1rem 1.25rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .section ul li {
+            margin-bottom: 0.4rem;
+            padding-left: 0.25rem;
+        }
+
+        .section ul li::marker {
+            color: var(--teal);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(168, 230, 207, 0.15), rgba(248, 200, 220, 0.1));
+            border-left: 3px solid var(--teal);
+            border-radius: 0 12px 12px 0;
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            color: var(--deep-teal);
+            font-weight: 500;
+        }
+
+        .divider {
+            height: 1px;
+            background: var(--border);
+            margin: 2rem 0;
+        }
+
+        /* === TABLE === */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.88rem;
+        }
+
+        .data-table th {
+            background: var(--deep-teal);
+            color: #fff;
+            text-align: left;
+            padding: 0.65rem 1rem;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .data-table th:first-child {
+            border-radius: 8px 0 0 0;
+        }
+
+        .data-table th:last-child {
+            border-radius: 0 8px 0 0;
+        }
+
+        .data-table td {
+            padding: 0.6rem 1rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+            vertical-align: top;
+        }
+
+        .data-table tr:last-child td:first-child {
+            border-radius: 0 0 0 8px;
+        }
+
+        .data-table tr:last-child td:last-child {
+            border-radius: 0 0 8px 0;
+        }
+
+        .data-table tr:nth-child(even) {
+            background: rgba(168, 230, 207, 0.06);
+        }
+
+        /* === FOOTER === */
+        .footer {
+            text-align: center;
+            padding: 2rem 1.5rem 3rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .footer a {
+            color: var(--teal);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer .brand {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.1rem;
+            color: var(--deep-teal);
+            margin-bottom: 0.25rem;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            .header {
+                padding: 2rem 1.25rem 3rem;
+            }
+            .container {
+                padding: 0 1rem;
+            }
+            .card {
+                padding: 1.5rem;
+                border-radius: 16px;
+            }
+            .data-table {
+                font-size: 0.8rem;
+            }
+            .data-table th, .data-table td {
+                padding: 0.5rem 0.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <span class="header-icon">🌸</span>
+    <h1>Privacy Policy</h1>
+    <p class="subtitle">Garden Timer: Focus & Grow</p>
+    <nav>
+        <a href="support.html">Support & FAQ</a>
+    </nav>
+</div>
+
+<div class="container">
+    <div class="card">
+
+        <span class="effective-date">Effective: February 23, 2026</span>
+
+        <p class="intro">
+            Garden Timer ("we," "our," or "the app") is a focus timer application for iOS developed by an independent developer. We believe your privacy is a fundamental right. This policy explains what data we collect, how we use it, and the choices you have — written in plain language, not legalese.
+        </p>
+
+        <!-- SECTION 1 -->
+        <div class="section">
+            <h2>1. Our Core Principle</h2>
+            <div class="highlight-box">
+                Garden Timer is designed to work with minimal data collection. Your focus session data is stored locally on your device using Apple's SwiftData framework and is never transmitted to our servers. We do not have servers that store your personal data.
+            </div>
+        </div>
+
+        <!-- SECTION 2 -->
+        <div class="section">
+            <h2>2. Data We Collect</h2>
+            <p>Here is a complete and transparent overview of the data Garden Timer handles:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>Stored Where</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Focus session records (duration, date, garden stage)</td>
+                        <td>On your device only</td>
+                        <td>Display your stats, streaks, and garden growth</td>
+                    </tr>
+                    <tr>
+                        <td>Garden progress (growth stage, selected scene)</td>
+                        <td>On your device only</td>
+                        <td>Persist your garden across sessions</td>
+                    </tr>
+                    <tr>
+                        <td>App preferences (sound selection, timer defaults)</td>
+                        <td>On your device only</td>
+                        <td>Remember your settings</td>
+                    </tr>
+                    <tr>
+                        <td>Purchase status (subscription active/expired)</td>
+                        <td>Apple's servers (via StoreKit)</td>
+                        <td>Verify your Garden Pro entitlement</td>
+                    </tr>
+                    <tr>
+                        <td>Anonymized crash reports</td>
+                        <td>Apple's servers (if you opt in)</td>
+                        <td>Fix bugs and improve stability</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- SECTION 3 -->
+        <div class="section">
+            <h2>3. Data We Do Not Collect</h2>
+            <p>We want to be explicit about what we do <strong>not</strong> do:</p>
+            <ul>
+                <li>We do not collect your name, email address, or phone number</li>
+                <li>We do not require account creation</li>
+                <li>We do not track your location</li>
+                <li>We do not access your contacts, photos, camera, or microphone</li>
+                <li>We do not use fingerprinting or device-based tracking</li>
+                <li>We do not sell, rent, or share any data with data brokers</li>
+                <li>We do not build advertising profiles about you</li>
+            </ul>
+        </div>
+
+        <!-- SECTION 4 -->
+        <div class="section">
+            <h2>4. In-App Purchases & Subscriptions</h2>
+            <p>Garden Timer offers optional premium features ("Garden Pro") through Apple's in-app purchase system (StoreKit 2). All payment processing is handled entirely by Apple. We receive only a confirmation of your purchase status — we never see your payment method, credit card number, or Apple ID credentials.</p>
+            <p>For information about managing subscriptions, refunds, or billing inquiries, please visit <a href="https://support.apple.com/en-us/HT202039" style="color: var(--teal);">Apple's subscription support page</a>.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- SECTION 5 -->
+        <div class="section">
+            <h2>5. Advertising</h2>
+            <p>The free version of Garden Timer may display advertisements provided by third-party ad networks (such as Google AdMob). When ads are shown, these third-party services may collect:</p>
+            <ul>
+                <li>Device type and operating system version</li>
+                <li>Anonymized device identifiers</li>
+                <li>General (non-precise) location based on IP address</li>
+                <li>Ad interaction data (impressions, taps)</li>
+            </ul>
+            <p>We do not share any of your focus session data, garden progress, or personal information with advertisers. Garden Pro subscribers enjoy a completely ad-free experience.</p>
+            <p>If you prefer not to receive personalized ads, you can limit ad tracking in your device settings: <strong>Settings → Privacy & Security → Apple Advertising → Personalized Ads → Off</strong>.</p>
+        </div>
+
+        <!-- SECTION 6 -->
+        <div class="section">
+            <h2>6. Third-Party Services</h2>
+            <p>Garden Timer integrates with the following third-party services, each of which operates under its own privacy policy:</p>
+            <ul>
+                <li><strong>Apple StoreKit</strong> — in-app purchase processing (<a href="https://www.apple.com/legal/privacy/" style="color: var(--teal);">Apple Privacy Policy</a>)</li>
+                <li><strong>Google AdMob</strong> — advertising in free tier (<a href="https://policies.google.com/privacy" style="color: var(--teal);">Google Privacy Policy</a>)</li>
+            </ul>
+            <p>These services provide the same or equivalent protection of user data as described in this privacy policy, in accordance with Apple's App Store Review Guidelines.</p>
+        </div>
+
+        <!-- SECTION 7 -->
+        <div class="section">
+            <h2>7. Children's Privacy</h2>
+            <p>Garden Timer does not knowingly collect personal information from children under 13 (or the applicable age in your jurisdiction). The app does not require account creation or collect identifying information from any user. If you believe a child has somehow provided us with personal data, please contact us and we will promptly address the concern.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- SECTION 8 -->
+        <div class="section">
+            <h2>8. Your Rights & Choices</h2>
+
+            <h3>Data Access & Deletion</h3>
+            <p>Since your focus data is stored only on your device, you have full control at all times. To delete all Garden Timer data, simply delete the app from your device. All session history, garden progress, and preferences will be permanently removed.</p>
+
+            <h3>For EU/EEA Users (GDPR)</h3>
+            <p>Under the General Data Protection Regulation, you have the right to access, correct, delete, restrict processing of, and port your personal data. Since we store data locally on your device and do not maintain user accounts or external databases, these rights are inherently satisfied — you control your data entirely.</p>
+
+            <h3>For California Users (CCPA/CPRA)</h3>
+            <p>Under the California Consumer Privacy Act and California Privacy Rights Act, you have the right to know what data is collected, request deletion, and opt out of the sale of personal information. We do not sell personal information. Your data remains on your device.</p>
+
+            <h3>For Users Worldwide</h3>
+            <p>Regardless of your location, we respect your privacy rights. If your local law grants you additional data protection rights, we honor them. Contact us with any questions.</p>
+        </div>
+
+        <!-- SECTION 9 -->
+        <div class="section">
+            <h2>9. Data Security</h2>
+            <p>Your focus session data is stored in Apple's SwiftData framework on your device, protected by your device's built-in security (including device passcode, Face ID, or Touch ID). Purchase verification uses Apple's encrypted StoreKit APIs. We do not operate external servers or databases that store your information.</p>
+        </div>
+
+        <!-- SECTION 10 -->
+        <div class="section">
+            <h2>10. Changes to This Policy</h2>
+            <p>If we make material changes to this privacy policy, we will update the "Effective" date at the top of this page and, where appropriate, notify you through the app. We encourage you to review this policy periodically. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+        </div>
+
+        <!-- SECTION 11 -->
+        <div class="section">
+            <h2>11. Contact Us</h2>
+            <p>If you have questions, concerns, or requests regarding this privacy policy or your data, please contact us:</p>
+            <div class="highlight-box">
+                📧 Email: <a href="mailto:support@gardentimer.app" style="color: var(--deep-teal);">support@gardentimer.app</a><br>
+                🌐 Support: <a href="support.html" style="color: var(--deep-teal);">gardentimer.app/support</a>
+            </div>
+            <p>We aim to respond to all inquiries within 48 hours.</p>
+        </div>
+
+    </div>
+</div>
+
+<div class="footer">
+    <p class="brand">🌸 Garden Timer</p>
+    <p>Focus & Grow</p>
+    <p style="margin-top: 0.75rem;"><a href="support.html">Support</a> · <a href="privacy.html">Privacy</a></p>
+    <p style="margin-top: 0.75rem; font-size: 0.8rem; opacity: 0.7;">© 2026 Garden Timer. All rights reserved.</p>
+</div>
+
+</body>
+</html>
